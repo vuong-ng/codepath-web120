@@ -1,0 +1,16 @@
+.samosa {
+  text-align: center;
+  /* margin: 0 auto; */
+  height: 15em; 
+  padding:1.5em;
+  /* margin: 0 auto; */
+}
+
+.header {
+  text-align: center;
+  max-width: fit-content;
+  display:flex;
+  justify-content: center;
+  flex-direction: column;
+  align-self: center;
+}
