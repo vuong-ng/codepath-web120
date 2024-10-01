@@ -29,7 +29,7 @@ function App() {
     },
     {
       front: `After giving up mural painting, Gustav Klimt designed for what industry?`,
-      back: `What color is the "Mind stone" in the 2017 Marvel Legacy relaunch?`,
+      back: `Fashion`,
       difficulty:`Easy`,
       
     },
@@ -52,6 +52,9 @@ function App() {
 
   const randomCard = () => {
     var n = Math.floor(Math.random() * flashcards.length);
+    while (n == currentCard) {
+      n = Math.floor(Math.random() * flashcards.length);
+    }
     if (flip) {
       setFlip(!flip);
     }
