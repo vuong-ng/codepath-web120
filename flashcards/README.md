@@ -2,9 +2,9 @@
 
 Submitted by: **Vuong Nguyen**
 
-This web app: **insert description**
+This web app: **Literature trivial flashcards app**
 
-Time spent: **X** hours spent in total
+Time spent: **2** hours spent in total
 
 ## Required Features
 
