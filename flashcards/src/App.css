@@ -51,3 +51,28 @@
 button {
   margin : 20px;
 }
+
+.answer {
+  display:flex;
+  flex-direction:row;
+  align-self: center;
+  justify-content:center;
+  align-items: baseline;
+}
+/* .result, .input {
+  height:25px;
+} */
+.input {
+  border: 3px 3px #F2EFE9;
+  height: 25px;
+  width: 400px;
+}
+#wrong {
+  background-color: #FFD6D7;
+  color: #252627;
+}
+
+#correct {
+  background-color: #e6ffe6;
+  color: #252627;
+}

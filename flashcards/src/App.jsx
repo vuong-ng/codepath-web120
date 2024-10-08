@@ -1,7 +1,6 @@
 import { useState } from 'react'
 // import React from 'react'
 import flower from './assets/flower.svg';
-
 import './App.css'
 
 function App() {
@@ -10,6 +9,8 @@ function App() {
   // const [flashcards, setFlahscards] = useState([]);
   const [flip, setFlip] = useState(false);
   const [currentCard, setCurrentCard] = useState(0);
+  const [input, setInput] = useState('');
+  const [result, setResult] = useState('');
   // setFlip = (card) => {
   //   if (!flip) {
   //     flip = !flip;
@@ -57,10 +58,40 @@ function App() {
     }
     if (flip) {
       setFlip(!flip);
-    }
+    };
     setCurrentCard(n);
+    setInput('');
+    setResult('');
   }
 
+  const next = () => {
+    if (currentCard == flashcards.length-1) {
+      setCurrentCard(0);
+    } else {
+      setCurrentCard(currentCard + 1);
+    };
+    setInput('');
+    setResult('');
+  };
+
+  const back = () => {
+      if (currentCard == 0) {
+        setCurrentCard(flashcards.length-1);
+      } else {
+        setCurrentCard(currentCard - 1);
+    };
+    setInput('');
+    setResult('');
+  };
+
+  const onCheckAnswer = () => {
+    if (input == flashcards[currentCard].back) {
+      setResult('correct');
+    } else {
+      setResult('wrong');
+    };
+  };
+  console.log(result);
   return (
     <>
       <div>
@@ -72,8 +103,25 @@ function App() {
         <p>{flip ? flashcards[currentCard].back : flashcards[currentCard].front}</p>
         <img src={flower}/>
       </div>
-      <button onClick={randomCard}>Next
-      </button>
+      <div className='answer'>
+          <form className='container'>
+          {/* <div id={result} className='result'> */}
+            <input id={result} className='input' type="text" value={input} onChange={(e) => { setInput(e.target.value) }} />
+          {/* </div> */}
+          </form>
+          <button
+            type='submit'
+            className='onCheckAnswer'
+            onClick={onCheckAnswer}
+          >
+            Submit
+          </button>
+      </div>
+      <div>
+      <button onClick={next}>Next</button>
+      <button onClick={back}>Back</button>
+      <button onClick={randomCard}>Shuffle</button>
+      </div>
     </>
   )
 }
