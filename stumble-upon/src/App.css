@@ -1,0 +1,19 @@
+img {
+  width:400px;
+  height:400px;
+}
+
+.whole-page {
+  display:grid;
+  grid-template-columns: 3fr 1fr;
+}
+
+.main-window {
+  justify-self: center;
+}
+
+.ban-list {
+  background: cornsilk 0.5;
+  height:100vh;
+  
+}
