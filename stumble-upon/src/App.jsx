@@ -5,53 +5,51 @@ import './App.css'
 function App() {
   const [currentImage, setCurrentImage] = useState()
   const [basicInfo, setBasicInfo] = useState({})
-  const [otherInfo, setOtherInfo] = useState({})
-  // const 
-  // const [banCountries, setBanCountries] = useState([])
-  // const [banYears, setBanYears] = useState([])
-  // const [banBreeds, setBanBreeds] = useState([])
-  // const [prevImages, setPrevImages] = useState([])
   const [banList, setBanList] = useState([])
   const [bannedList, setBannedList] = useState([])
-  const allCountries = ['Egypt', 'Greece', 'United States', 'United Arab Emirates', 'Australia', 'France', 'United Kingdom', 'Burma', 'Canada', 'Cyprus', 'Russia', 'China', 'Japan', 'Isle of Man', 'Norway', 'Iran (Persia)', 'Singapore', 'Somalia', 'Turkey', 'Thailand'];
-  let filter =allCountries.join();
-  // const getAllCountries = async() => {
-  //   const  response = await fetch(`https://api.thecatapi.com/v1/breeds`);
-  //   const json = await response.json();
-  //   for (const img of json) {
-  //     if (!allCountries.includes(img.origin)){
-  //       allCountries.push(img.origin);
-  //     }
-  //   }
-  // }
-  // getAllCountries();
-  // console.log(allCountries.join())
-  const handleDiscover = async () => {
-    let filteredCountries = allCountries.filter(country => !bannedList.includes(country));
-    console.log(filteredCountries);
-    let filter = filteredCountries.join();
-    const apiKey = import.meta.env.VITE_APP_ACCESS_KEY;
-    // console.log(filter);
-    const url = `https://api.thecatapi.com/v1/images/search?api_key=${apiKey}&has_breeds=1&breeds_origins=${filter}`;
-    console.log(apiKey);
-    const  response = await fetch(url);
-    const  json = await response.json();
-    let breeds = json[0].breeds[0];
-    let weight = breeds['weight'];
-      setBasicInfo({
-        years: `${weight.metric} years`,
-        name: `${breeds.name}`,
-        origin:`${breeds.origin}`
-      })
-    setCurrentImage(json[0].url)
+  // const allCountries = ['Egypt', 'Greece', 'United States', 'United Arab Emirates', 'Australia', 'France', 'United Kingdom', 'Burma', 'Canada', 'Cyprus', 'Russia', 'China', 'Japan', 'Isle of Man', 'Norway', 'Iran (Persia)', 'Singapore', 'Somalia', 'Turkey', 'Thailand'];
+  const apiKey = import.meta.env.VITE_APP_ACCESS_KEY;
+  let storedData = [];
+  const callAPI = async () => {
+    const url = `https://api.thecatapi.com/v1/images/search?limit=30&has_breeds=1`
+    let storedData = [];
+    const response = await fetch(url, {
+      headers: {
+        'x-api-key': apiKey
+      }
+    });
+      let data = await response.json();
+      // data = data.filter(img => img.image?.url != null);
+      storedData = data;
+      return storedData;
   }
 
-  const handleBan = () => {
-    // let i = allCountries.indexOf(value);
-    // allCountries.splice(i, 1)
-    // let filteredCountries = allCountries.filter(country => !bannedList.includes(country));
-    // console.log(i, allCountries)
-    // filter = allCountries.join();
+  const handleDiscover = async () => {
+    // const apiKey = import.meta.env.VITE_APP_ACCESS_KEY;
+    storedData = await callAPI();
+    console.log(storedData[0]);
+    const filteredData = storedData.filter(item => {
+      const breeds = item.breeds[0];
+      const weight = breeds['weight'];
+      const name = breeds['name'];
+      const origin = breeds['origin'];
+      return !bannedList.includes(weight) && !bannedList.includes(name) && !bannedList.includes(origin);
+  });
+
+  if (filteredData.length > 0) {
+      const randomItem = filteredData[Math.floor(Math.random() * filteredData.length)];
+      const breeds = randomItem.breeds[0];
+      const weight = breeds['weight'];
+
+      setBasicInfo({
+          years: `${weight.metric} years`,
+          name: `${breeds.name}`,
+          origin: `${breeds.origin}`
+      });
+      setCurrentImage(randomItem.url);
+  } else {
+      console.error("No valid items found after filtering");
+  }
   }
 
   const reset = () => {
