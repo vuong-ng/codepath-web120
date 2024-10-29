@@ -49,7 +49,11 @@ function App() {
                 type="text"
                 placeholder="Search..."
                 onChange={(inputString) => searchItems(inputString.target.value)}
-            />
+              />
+              
+              <div className='stats'>
+                  Number of breweries {randomList.length}
+            </div>
             <div className="img-container">
                 <ul>
                     {searchInput.length > 0 ? (
