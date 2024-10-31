@@ -1,12 +1,13 @@
 import { useState, useEffect, useLayoutEffect } from 'react'
 import RecipeCard from './components/RecipeCard';
+import BreweryChart from './components/Chart';
 
 import './App.css'
 // const API_KEY = import.meta.env.VITE_APP_API_KEY;
 function App() {
   const [randomList, setRandomList] = useState([]);
   const [searchInput, setSearchInput] = useState("");
-  const [filteredResults, setFilteredResults] = useState([]);
+    const [filteredResults, setFilteredResults] = useState([]);
   // const tagsList = ['vegan', 'gluten','diary-free',]
   
   useLayoutEffect(() => {
@@ -42,7 +43,8 @@ function App() {
             <h1>Your Brew Handbook</h1>
         <h3>What are you craving...?</h3>
         <h2>Total beweries: {randomList.length}</h2>
-        <h2>Filtered: {filteredResults.length}</h2>
+              <h2>Filtered: {filteredResults.length}</h2>
+              <BreweryChart/>
         <h2></h2>
             <br />
             <input
