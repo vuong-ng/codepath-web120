@@ -67,9 +67,12 @@ function App() {
                     ) : (
                         randomList.map((brew) => (
                             <li key={brew.id}>
-                                <h2>{brew.name}</h2>
-                                <h3>{brew.country}</h3>
-                                <h4>{brew.address}</h4>
+                                <RecipeCard
+                                    name={brew.name}
+                                    tags={brew.country}
+                                    id={brew.id}
+                                    state={brew.state}
+                                ></RecipeCard>
                             </li>
                         ))
                     )}

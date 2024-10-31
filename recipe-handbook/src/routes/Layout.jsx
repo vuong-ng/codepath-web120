@@ -5,9 +5,14 @@ const Layout = () => {
     <div>
       <nav>
         <ul>
-          <li className="home-link" key="home-button">
-            <Link style={{ color: "white" }} to="/">
+          <li className="about-link" key="about-button">
+            <Link style={{ color: "white" }} to="/about">
               About
+            </Link>
+          </li>
+          <li>
+          <Link style={{ color: "white" }} to="/">
+              Home
             </Link>
           </li>
         </ul>

@@ -1,6 +1,6 @@
 body {
   background-color: #f8f8f8; /* Light neutral background color */
-  font-family: 'Arial', sans-serif; /* Elegant font */
+  /* font-family: 'Arial', sans-serif; Elegant font */
   color: #333; /* Dark text color for readability */
   margin: 0;
   padding: 0;
@@ -18,7 +18,7 @@ li{
   list-style-type: none;
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4,h5,p {
   font-family: 'Georgia', serif; /* Elegant serif font for headings */
   margin-bottom: 1rem;
 }
@@ -38,14 +38,44 @@ img {
 }
 
 nav {
-  position: fixed; 
+  position: fixed;
+  width:100%; 
+  box-sizing: border;
+  background-color: #333;
   top: 0; 
   right: 0; 
 }
-
+nav ul {
+  display: flex;
+  flex-direction: row;
+  gap:20px;
+}
 .home-link 
 {
   border:1px dotted white;
   background:#1d1f1d;
   width:75px;
+}
+
+.img-container {
+  display:flex;
+  flex-direction: column;
+  gap:20px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap:2px;
+  box-sizing: border;
+  box-shadow: 0 0 2px 2px gray;
+}
+
+.about-card {
+  display:flex;
+  flex-direction: column;
+  box-sizing:border-box;
+  box-shadow: 0 0 2px 2px gray;
+  justify-content: center;
+  align-items: center;
 }
