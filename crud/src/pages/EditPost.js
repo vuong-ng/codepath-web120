@@ -17,8 +17,8 @@ const EditPost = ({ data }) => {
         event.preventDefault();
         try {
             const {data,error} = await supabase
-            .from("Posts")
-            .update({ name: post.name, author: post.skills, description: post.personality })
+            .from("Crews")
+            .update({ name: post.name, skills: post.skills, personality: post.personality })
             .eq('id', id);
             if (error) {
                 throw error;
@@ -32,7 +32,7 @@ const EditPost = ({ data }) => {
     }
 
     const {id} = useParams();
-    const [post, setPost] = useState({id: null, title: "", author: "", description: ""});
+    const [post, setPost] = useState({id:null,name: "", skills: "", personality: ""});
 
     const handleChange = (event) => {
         const {name, value} = event.target;
@@ -47,16 +47,16 @@ const EditPost = ({ data }) => {
     return (
         <div>
             <form>
-                <label htmlFor="title">Name</label> <br />
-                <input type="text" id="title" name="title" value={post.name} onChange={handleChange} /><br />
+                <label htmlFor="name">Name</label> <br />
+                <input type="text" id="name" name="name" value={post.name} onChange={handleChange} /><br />
                 <br/>
 
-                <label htmlFor="author">Skills</label><br />
-                <input type="text" id="author" name="author" value={post.skills} onChange={handleChange} /><br />
+                <label htmlFor="skills">Skills</label><br />
+                <input type="text" id="skills" name="skills" value={post.skills} onChange={handleChange} /><br />
                 <br/>
 
-                <label htmlFor="description">Personality</label><br />
-                <textarea rows="5" cols="50" id="description" value={post.personality} onChange={handleChange} >
+                <label htmlFor="personality">Personality</label><br />
+                <textarea rows="5" cols="50" id="personality" name="personality" value={post.personality} onChange={handleChange} >
                 </textarea>
                 <br />
                 
@@ -67,4 +67,4 @@ const EditPost = ({ data }) => {
     )
 }
 
-export default EditPost
+export default EditPost;

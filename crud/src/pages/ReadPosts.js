@@ -14,18 +14,19 @@ const ReadPosts = (props) => {
                 .order('created_at', { ascending: true })
 
                 // set state of posts
-                setPosts(data);
+            setPosts(data);
+            console.log(data)
         }
-        setPosts(props.data);
+        // setPosts(props.data);
         fetchPost();
-    }, [props]);
+    }, []);
     
     return (
         <div className="ReadPosts">
             {
                 posts && posts.length > 0 ?
                 posts.map((post,index) => 
-                   <Card name={post.name} skills={post.skills} personality={post.personality}/>
+                   <Card id={post.id} name={post.name} skills={post.skills} personality={post.personality}/>
                 ) : <h2>{'No Crewmate Yet 😞'}</h2>
             }
         </div>  

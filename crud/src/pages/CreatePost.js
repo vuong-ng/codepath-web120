@@ -4,29 +4,13 @@ import './CreatePost.css'
 import { supabase } from '../client';
 
 const CreatePost = () => {
-    // const createPost = async (event) => {
-    //     event.preventDefault();
-    //     try {
-    //         await supabase
-    //             .from('Posts')
-    //             .insert([{
-    //                 title: post.title,
-    //                 author: post.author,
-    //                 description: post.description,
-    //             }])
-    //             .select()
-    //         window.location = "/";
-    //     } catch (error) {
-    //         console.error();
-    //     }
-    // }
     const createPost = async (event) => {
         event.preventDefault();
         try {
             const { data, error } = await supabase
                 .from('Crews')
                 .insert({
-                     name: post.name,
+                    name: post.name,
                     skills: post.author,
                     personality: post.personality,
                 })

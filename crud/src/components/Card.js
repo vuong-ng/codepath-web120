@@ -7,11 +7,6 @@ import { Link } from 'react-router-dom'
 
 const Card = (props) =>  {
 
-  const [count, setCount] = useState(0)
-  const updateCount = () => {
-    setCount((count) => count + 1);
-  }
-
   return (
       <div className="Card">
           <Link to={'edit/'+ props.id}><img className="moreButton" alt="edit button" src={chick} width={250} height={40} align={'center'} /></Link>
