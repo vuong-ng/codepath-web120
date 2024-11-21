@@ -7,14 +7,12 @@ const CreatePost = (props) => {
         try {
             const { data, error } = await supabase
                 .from("Posts")
-                .insert([
+                .insert(
                     {
-                        id: post.id,
                         caption: post.caption,
-                        author: post.author,
-                        created_day: post.created_day
+                        author: post.author
                     }
-                ])
+                )
                 .select();
             if (error) {
                 throw (error);
@@ -44,7 +42,7 @@ const CreatePost = (props) => {
                 <br />
 
                 <label htmlFor="caption">Caption</label>
-                <input type="text" name="caption" onChange={handleChange} />
+                <textarea type="text" name="caption" onChange={handleChange} />
                 <br />
 
                 {/* <label htmlFor=""></label>

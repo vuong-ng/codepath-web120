@@ -1,0 +1,134 @@
+
+.container {
+    height:100vh;
+    width:100vw;
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+}
+.post-container {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    margin-left: auto;
+    margin-right: auto;
+    padding: 15px;
+    width:80vw;
+    height:80%;
+    /* font-family: 'Helvetica, Arial, sans-serif'; */
+  }
+  
+  .post-author {
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-bottom: 5px;
+    color: #333;
+  }
+  
+  .post-time {
+    color: #777;
+    font-size: 0.8em;
+    margin-bottom: 15px;
+  }
+  
+  .post-caption {
+    font-size: 1em;
+    margin-bottom: 15px;
+    line-height: 1.5;
+    color: #333;
+  }
+  
+  .post-footer {
+    display: flex;
+    flex-direction:column;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #eee;
+    padding-top: 10px;
+    gap:10px;
+  }
+  
+  .post-likes,
+  .post-comments {
+    display: flex;
+    align-items: center;
+    color: #606770;
+  }
+  .comments-section{
+    width:100%;
+  }
+  .post-likes i,
+  .post-comments i {
+    margin-right: 5px;
+  }
+  
+  .post-likes span,
+  .post-comments span {
+    font-weight: bold;
+    margin-left: 5px;
+  }
+  
+  .post-likes:hover,
+  .post-comments:hover {
+    color: #385898;
+    cursor: pointer;
+  }
+  .comments-section {
+    margin-top: 20px;
+    position:relative;
+    color:black;
+  }
+  .comments-list {
+    list-style-type: none;
+    padding: 0;
+    max-height: 200px; /* Set a fixed height for the comments list */
+    overflow-y: auto; /* Enable vertical scrolling */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    background: #f9f9f9;
+  }
+
+  .comments-section h2 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+  }
+  
+  .comments-section ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .comments-section li {
+    background: #f0f0f0;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  .comments-section form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .comments-section input {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .comments-section button {
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .comments-section button:hover {
+    background-color: #0056b3;
+  }
