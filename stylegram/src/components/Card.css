@@ -5,21 +5,49 @@
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
   margin: 16px auto;
 }
+#Button{
+  font-size: 20px;
+  font-style:#65676b
+}
+
+#post-info{
+  display:flex;
+  flex-direction:row;
+  align-items: center;
+}
 
 .card-header {
   padding: 12px;
   display: flex;
+  justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid #e4e6eb;
   background-color: #E3E1D4;
 }
 
-.card-header img {
+.card-reactions{
+  display:flex;
+  flex-direction:row;
+  justify-content: space-between;
+  margin-left: 20px;
+  margin-right:20px;
+  align-items:center;
+  color:#65676b;
+  padding:5px;
+}
+
+.likes-total{
+  display:flex;
+  align-items: center;
+  gap:5px;
+}
+
+/* .card-header img {
   width: 40px;
   height: 40px;
   border-radius: 50%;
   margin-right: 10px;
-}
+} */
 
 .author {
   font-weight: 600;
@@ -85,9 +113,6 @@
   background-color: #f2f2f2;
 }
 .edit-button{
-  /* flex: 1; */
-  /* padding: 8px; */
-  /* border: none; */
   background: #65676b;
   margin-left:0;
   font-size: 15px;

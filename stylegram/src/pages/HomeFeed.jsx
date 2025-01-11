@@ -5,7 +5,7 @@ import "./HomeFeed.css"
 
 const HomeFeed = (props) => {
     const [posts, setPosts] = useState([]);
-    const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useState('');
 
     const handleSearchChange = (event) => {
     setSearchTerm(event.target.value);

@@ -1,13 +1,21 @@
 import { useState, useEffect } from 'react'
-import { BrowserRouter, Routes, Route, useRoutes, Outlet } from 'react-router-dom';
+import {  Routes, Route, useRoutes} from 'react-router-dom';
 
 import CreatePost from './pages/CreatePost';
 import DetailsPost from './pages/DetailsPost';
 import EditPost from './pages/EditPost';
 import HomeFeed from './pages/HomeFeed';
 import Header from './pages/Header'
+import MenuBar from './components/MenuBar';
 
 import './App.css'
+
+// const AppLayout = () => {
+//   <>
+//     <MenuBar />
+//     <Outlet/>
+//   </>
+// }
 
 function App() {
   const posts = [
@@ -47,13 +55,11 @@ function App() {
 
   return (
     <div className="App">
-       <Routes>
+      <Routes>
         <Route index={true} element={<HomeFeed data={posts}/>} />
           <Route path="/edit/:id" index={false} element={<EditPost data={posts} />} />
           <Route path="/:id" index={false} element={<DetailsPost data={posts} />} />
           <Route path="/new" index={false} element={<CreatePost />} />
-          {/* <Route path="/new" index={false} element={<CreatePost />} /> */}
-          
         </Routes>
     </div>
   )

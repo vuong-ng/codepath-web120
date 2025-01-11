@@ -1,9 +1,9 @@
 import { Outlet, Link } from 'react-router-dom';
+// import MenuBar from '../components/MenuBar';
 import './Header.css';
 
 const Header = () => {
     return (
-        <div>
             <div className="header">
                 <nav>
                     <Link
@@ -18,10 +18,10 @@ const Header = () => {
                         Create new post{" "}
                     </Link>
                 </nav>
-
-            </div>
+            {/* <MenuBar /> */}
             <Outlet />
-        </div>
+            </div>
+
     )
 }
 export default Header;
