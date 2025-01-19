@@ -1,3 +1,30 @@
+.main{
+  width: 100vw;;
+}
+
+#feed-comment-list{
+    padding: 10px;
+    margin:10px;
+    max-height: 150px; /* Set a fixed height for the comments list */
+    border-top: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 10px;
+    background: #f9f9f9;
+    overflow-y:scroll;
+
+}
+#feed-post-comment{
+  color: #333;
+  /* list-style-type: none; */
+    padding: 0;
+    margin:20px;
+    max-height: 200px; /* Set a fixed height for the comments list */
+    overflow-y: auto; /* Enable vertical scrolling */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    background: #f9f9f9;
+}
 .card {
   min-width: 680px;
   background: white;
@@ -25,6 +52,10 @@
   background-color: #E3E1D4;
 }
 
+#comments-list{
+  display:none;
+}
+
 .card-reactions{
   display:flex;
   flex-direction:row;
@@ -42,22 +73,12 @@
   gap:5px;
 }
 
-/* .card-header img {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  margin-right: 10px;
-} */
-
 .author {
   font-weight: 600;
   font-size: 15px;
   color: #050505;
 }
 
-/* .id {
-
-} */
 
 .created-days {
   color: #65676b;

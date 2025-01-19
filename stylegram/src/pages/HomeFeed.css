@@ -24,3 +24,18 @@
     border-radius: 5px;
     font-size: 16px;
   }
+
+  .HomeFeed .add-comment {
+    /* width:100%; */
+    margin:0;
+    max-width:40em;
+    /* padding:0; */
+  }
+
+  .HomeFeed form{
+    width:100%;
+  }
+
+  /* .HomeFeed form{
+    display:none;
+  } */

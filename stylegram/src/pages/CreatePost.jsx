@@ -1,5 +1,6 @@
 import {useState, useEffect} from 'react'
 import { supabase } from '../client'
+import Button from '@mui/material/Button';
 import './CreatePost.css'
 const CreatePost = (props) => {
     const createPost = async (event) => {
@@ -35,8 +36,14 @@ const CreatePost = (props) => {
     }
 
     return (
-        <div className='main'>
-            <form onSubmit={createPost}>
+        <div id='create-main'>
+            <form onSubmit={createPost} id='create-post-form'>
+                <div id='create-header'>
+                    {" "}
+                    Create a new post
+                    {" "}
+                </div>
+                <br />
                 <label htmlFor="author">Author</label>
                 <input type="text" name='author' onChange={handleChange} />
                 <br />
@@ -45,11 +52,20 @@ const CreatePost = (props) => {
                 <textarea type="text" name="caption" onChange={handleChange} />
                 <br />
 
-                {/* <label htmlFor=""></label>
-                <input type="text" name='caption' onChange={handleChange} />
-                <br /> */}
-
-                <input type="submit" value='submit' />
+                <Button
+                    type='submit'
+                    variant='contained'
+                    sx={{
+                        backgroundColor: '#AF1740', // Custom background color
+                        color: '#ffffff',          // Text color
+                        '&:hover': {
+                          backgroundColor: '#740938', // Hover color
+                        },
+                      }}
+                    
+                >
+                    Submit
+                </Button>
                 
             </form>
         </div >

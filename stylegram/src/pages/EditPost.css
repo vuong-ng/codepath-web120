@@ -1,13 +1,13 @@
-/* EditPost.css */
-
 .form-container {
     display: flex;
+    flex-direction:column;
     justify-content: center;
     align-items: center;
-    /* height: 100vh; */
+    position:relative;
+    height: 100vh;
     width:100vw;
-    /* background-color: ; */
-  }
+    background-color: hsl(0, 0%, 96%);
+}
   
   form {
     background-color: #fff;
@@ -64,10 +64,23 @@
   }
   
   button.deleteButton {
-    background-color: #f44336;
+    background: linear-gradient(45deg, #fb7185 30%, #be123c 90%);
     color: #fff;
   }
+  button.submitButton{
+    /* background: linear-gradient(45deg, #fb7185 30%, #be123c 90%); */
+    border:solid #be123c;
+    background:#fff;
+    color: #be123c;
+  }
   
-  button.deleteButton:hover {
-    background-color: #e53935;
+  button.submitButton:hover {
+    background-color: #e17b8a;
+    color:#fff;
+    font-size:16px;
+  }
+
+  .form-container #edit-post-header{
+    border-bottom: solid rgba(0, 0, 0, 0.24);
+    font-weight: bold;
   }
